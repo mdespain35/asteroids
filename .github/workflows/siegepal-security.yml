@@ -174,6 +174,15 @@ jobs:
             exit 1
           fi
           echo "SiegePal gate: passed."
+      - name: Notify SiegePal
+        continue-on-error: true
+        env:
+          SIEGEPAL_CALLBACK_URL: "https://fkifoxniqz.a.pinggy.link/github/scan-callback/?token=9yZCE1o7luvFZzcTYQYtQ2fJa91HZitbR6gJEK3JnoQ"
+        run: >
+          curl -sS -X POST "$SIEGEPAL_CALLBACK_URL"
+          -H "Content-Type: application/json"
+          -d '{"repository":"mdespain35/asteroids","run_id":"${{ github.run_id }}","category":"sast"}'
+          || true
   checkov:
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.checkov == true || inputs.checkov == 'true' }}
     runs-on: ubuntu-latest
@@ -312,6 +321,15 @@ jobs:
             exit 1
           fi
           echo "SiegePal gate: passed."
+      - name: Notify SiegePal
+        continue-on-error: true
+        env:
+          SIEGEPAL_CALLBACK_URL: "https://fkifoxniqz.a.pinggy.link/github/scan-callback/?token=9yZCE1o7luvFZzcTYQYtQ2fJa91HZitbR6gJEK3JnoQ"
+        run: >
+          curl -sS -X POST "$SIEGEPAL_CALLBACK_URL"
+          -H "Content-Type: application/json"
+          -d '{"repository":"mdespain35/asteroids","run_id":"${{ github.run_id }}","category":"iac"}'
+          || true
   bandit:
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.bandit == true || inputs.bandit == 'true' }}
     runs-on: ubuntu-latest
@@ -450,6 +468,15 @@ jobs:
             exit 1
           fi
           echo "SiegePal gate: passed."
+      - name: Notify SiegePal
+        continue-on-error: true
+        env:
+          SIEGEPAL_CALLBACK_URL: "https://fkifoxniqz.a.pinggy.link/github/scan-callback/?token=9yZCE1o7luvFZzcTYQYtQ2fJa91HZitbR6gJEK3JnoQ"
+        run: >
+          curl -sS -X POST "$SIEGEPAL_CALLBACK_URL"
+          -H "Content-Type: application/json"
+          -d '{"repository":"mdespain35/asteroids","run_id":"${{ github.run_id }}","category":"sast"}'
+          || true
   snyk:
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.snyk == true || inputs.snyk == 'true' }}
     runs-on: ubuntu-latest
@@ -587,6 +614,15 @@ jobs:
             exit 1
           fi
           echo "SiegePal gate: passed."
+      - name: Notify SiegePal
+        continue-on-error: true
+        env:
+          SIEGEPAL_CALLBACK_URL: "https://fkifoxniqz.a.pinggy.link/github/scan-callback/?token=9yZCE1o7luvFZzcTYQYtQ2fJa91HZitbR6gJEK3JnoQ"
+        run: >
+          curl -sS -X POST "$SIEGEPAL_CALLBACK_URL"
+          -H "Content-Type: application/json"
+          -d '{"repository":"mdespain35/asteroids","run_id":"${{ github.run_id }}","category":"sca"}'
+          || true
   trivy:
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.trivy == true || inputs.trivy == 'true' }}
     runs-on: ubuntu-latest
@@ -723,6 +759,15 @@ jobs:
             exit 1
           fi
           echo "SiegePal gate: passed."
+      - name: Notify SiegePal
+        continue-on-error: true
+        env:
+          SIEGEPAL_CALLBACK_URL: "https://fkifoxniqz.a.pinggy.link/github/scan-callback/?token=9yZCE1o7luvFZzcTYQYtQ2fJa91HZitbR6gJEK3JnoQ"
+        run: >
+          curl -sS -X POST "$SIEGEPAL_CALLBACK_URL"
+          -H "Content-Type: application/json"
+          -d '{"repository":"mdespain35/asteroids","run_id":"${{ github.run_id }}","category":"sca"}'
+          || true
   snyk-code:
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.snyk_code == true || inputs.snyk_code == 'true' }}
     runs-on: ubuntu-latest
@@ -860,6 +905,15 @@ jobs:
             exit 1
           fi
           echo "SiegePal gate: passed."
+      - name: Notify SiegePal
+        continue-on-error: true
+        env:
+          SIEGEPAL_CALLBACK_URL: "https://fkifoxniqz.a.pinggy.link/github/scan-callback/?token=9yZCE1o7luvFZzcTYQYtQ2fJa91HZitbR6gJEK3JnoQ"
+        run: >
+          curl -sS -X POST "$SIEGEPAL_CALLBACK_URL"
+          -H "Content-Type: application/json"
+          -d '{"repository":"mdespain35/asteroids","run_id":"${{ github.run_id }}","category":"sast"}'
+          || true
   snyk-iac:
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.snyk_iac == true || inputs.snyk_iac == 'true' }}
     runs-on: ubuntu-latest
@@ -997,3 +1051,12 @@ jobs:
             exit 1
           fi
           echo "SiegePal gate: passed."
+      - name: Notify SiegePal
+        continue-on-error: true
+        env:
+          SIEGEPAL_CALLBACK_URL: "https://fkifoxniqz.a.pinggy.link/github/scan-callback/?token=9yZCE1o7luvFZzcTYQYtQ2fJa91HZitbR6gJEK3JnoQ"
+        run: >
+          curl -sS -X POST "$SIEGEPAL_CALLBACK_URL"
+          -H "Content-Type: application/json"
+          -d '{"repository":"mdespain35/asteroids","run_id":"${{ github.run_id }}","category":"iac"}'
+          || true
